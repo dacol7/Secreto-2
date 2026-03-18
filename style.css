@@ -1,0 +1,135 @@
+/* Configurações Gerais */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #4a4a4a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #b5838d;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+/* Container da Galeria */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 20px;
+    max-width: 1100px;
+    width: 90%;
+}
+
+/* O Cartão de Foto */
+.photo-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+/* EFEITO HOVER: Aumentar a foto ao passar o mouse */
+.photo-card:hover {
+    transform: scale(1.1); /* Aumenta o tamanho */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Detalhes do Texto */
+.date {
+    font-size: 0.85rem;
+    color: #b5838d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #6d6875;
+    line-height: 1.4;
+}
+
+footer {
+    margin: 60px 0;
+    font-size: 0.9rem;
+    color: #8e949e;
+}
+/* --- Estilização do Efeito de Corações Flutuantes --- */
+
+/* O elemento base criado pelo JavaScript */
+.floating-heart {
+    position: fixed; /* Fixa na tela em relação ao clique */
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b6b; /* Cor do coração (pode mudar para rosa se preferir) */
+    pointer-events: none; /* Garante que o clique 'passe direto' pelo coração */
+    transform: translate(-50%, -50%) rotate(45deg); /* Centraliza e rotaciona para forma base */
+    
+    /* Aplica a animação definida abaixo */
+    animation: flutuarESumir 2s ease-out forwards;
+    z-index: 1000; /* Garante que fique acima de tudo */
+}
+
+/* Transforma o quadrado em forma de coração usando os pseudo-elementos */
+.floating-heart::before,
+.floating-heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b6b;
+    border-radius: 50%; /* Faz as bordas redondas */
+}
+
+.floating-heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.floating-heart::after {
+    left: -10px;
+    top: 0;
+}
+
+/* Definição da animação: Sobe 100px e fica invisível */
+@keyframes flutuarESumir {
+    0% {
+        opacity: 1; /* Totalmente visível no início */
+        transform: translate(-50%, -50%) rotate(45deg) translateY(0);
+    }
+    100% {
+        opacity: 0; /* Invisível no final */
+        /* Sobe -100px na vertical */
+        transform: translate(-50%, -50%) rotate(45deg) translateY(-100px);
+    }
+}

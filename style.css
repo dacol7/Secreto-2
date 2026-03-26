@@ -1,4 +1,3 @@
-/* Configurações Gerais */
 body {
     margin: 0;
     padding: 0;
@@ -24,7 +23,6 @@ h1 {
     letter-spacing: -1px;
 }
 
-/* Container da Galeria */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -34,7 +32,6 @@ h1 {
     width: 90%;
 }
 
-/* O Cartão de Foto */
 .photo-card {
     background: #ffffff;
     padding: 20px;
@@ -44,10 +41,8 @@ h1 {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
 }
-
-/* EFEITO HOVER: Aumentar a foto ao passar o mouse */
 .photo-card:hover {
-    transform: scale(1.1); /* Aumenta o tamanho */
+    transform: scale(1.1);
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     z-index: 10;
 }
@@ -60,7 +55,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Detalhes do Texto */
+
 .date {
     font-size: 0.85rem;
     color: #b5838d;
@@ -84,23 +79,18 @@ footer {
     font-size: 0.9rem;
     color: #8e949e;
 }
-/* --- Estilização do Efeito de Corações Flutuantes --- */
 
-/* O elemento base criado pelo JavaScript */
 .floating-heart {
-    position: fixed; /* Fixa na tela em relação ao clique */
+    position: fixed; 
     width: 20px;
     height: 20px;
-    background-color: #ff6b6b; /* Cor do coração (pode mudar para rosa se preferir) */
-    pointer-events: none; /* Garante que o clique 'passe direto' pelo coração */
-    transform: translate(-50%, -50%) rotate(45deg); /* Centraliza e rotaciona para forma base */
-    
-    /* Aplica a animação definida abaixo */
+    background-color: #ff6b6b;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(45deg);
     animation: flutuarESumir 2s ease-out forwards;
-    z-index: 1000; /* Garante que fique acima de tudo */
+    z-index: 1000;
 }
 
-/* Transforma o quadrado em forma de coração usando os pseudo-elementos */
 .floating-heart::before,
 .floating-heart::after {
     content: '';
@@ -108,7 +98,7 @@ footer {
     width: 20px;
     height: 20px;
     background-color: #ff6b6b;
-    border-radius: 50%; /* Faz as bordas redondas */
+    border-radius: 50%; 
 }
 
 .floating-heart::before {
@@ -120,16 +110,13 @@ footer {
     left: -10px;
     top: 0;
 }
-
-/* Definição da animação: Sobe 100px e fica invisível */
 @keyframes flutuarESumir {
     0% {
-        opacity: 1; /* Totalmente visível no início */
+        opacity: 1; 
         transform: translate(-50%, -50%) rotate(45deg) translateY(0);
     }
     100% {
-        opacity: 0; /* Invisível no final */
-        /* Sobe -100px na vertical */
+        opacity: 0; 
         transform: translate(-50%, -50%) rotate(45deg) translateY(-100px);
     }
 }
